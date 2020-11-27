@@ -1,14 +1,40 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta http-equiv="X-UA-Compatible" content="ie=edge">
-<meta name="Real State" content="The web app is build with Django"/>
-<title>Real State</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="Real State"
+        content="The web app is build with Django. Made by Attilio Andres Giglio Sanchez from Santiago Chile" />
+    <!-- Font Awesome -->
+    <!-- with % static, Django identify which dependencies by CDN link are related and therefore It need to apply to static files -->
+    <link rel="stylesheet" href="{% static 'css/all.css' %}">
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="{% static 'css/bootstrap.css' %}">
+    <!-- Custom -->
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <!-- LightBox -->
+    <link rel="stylesheet" href="{% static 'css/lightbox.min.css' %}">
+    <title>AG Real State</title>
 </head>
+
 <body>
-{% block content %}
-{% endblock %}
+    <!-- Topbar -->
+    {% include 'partials/_topbar.html' %}
+    <!-- navbar -->
+    {% include 'partials/_navbar.html' %}
+    <!-- main content -->
+    {% block content %}
+    {% endblock %}
+    <!-- footer -->
+    {% include 'partials/_footer.html' %}
+
+    <script src="{% static 'assets/js/jquery-3.3.1.min.js' %}"></script>
+    <script src="{% static 'assets/js/bootstrap.bundle.min.js' %}"></script>
+    <script src="{% static 'assets/js/lightbox.min.js' %}"></script>
+    <script src="{% static 'assets/js/main.js' %}"></script>
 </body>
+
 </html>
