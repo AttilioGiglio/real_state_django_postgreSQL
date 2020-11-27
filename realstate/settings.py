@@ -11,7 +11,10 @@ https://docs.djangoproject.com/en/3.1/ref/settings/
 """
 
 from pathlib import Path
-import os
+
+# (ADD) **
+import os 
+
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -55,8 +58,10 @@ ROOT_URLCONF = 'realstate.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        # On DIRS I indicate to Django where to look to render the views
+        
+        # On DIRS I indicate to Django where to look to render the views (ADD*)
         'DIRS': [os.path.join(BASE_DIR, 'templates')],
+        
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -119,7 +124,7 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.1/howto/static-files/
 
-# It organize and manage all the files from static folders, connecting with the app.
+# It organize and manage all the files from static folders, connecting with the app. (ADD**)
 STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 STATIC_URL = '/static/'
 STATICFILES_DIRS = [
