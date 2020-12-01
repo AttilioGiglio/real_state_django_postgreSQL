@@ -14,10 +14,10 @@
     <!-- Bootstrap -->
     <link rel="stylesheet" href="{% static 'css/bootstrap.css' %}">
     <!-- Custom -->
-    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
     <!-- LightBox -->
     <link rel="stylesheet" href="{% static 'css/lightbox.min.css' %}">
-    <title>AG Real State</title>
+    <title>AG Real State  {% block title %}{% endblock %}</title>
 </head>
 
 <body>
