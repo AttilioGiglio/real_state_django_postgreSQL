@@ -50,7 +50,7 @@ def search(request):
         state = request.GET['state']
         if state:
             # iexact = case sensitive, counts as valid uppercase and lowercase
-            queryset_list = queryset_list.filter(city__iexact=state)
+            queryset_list = queryset_list.filter(state__iexact=state)
 
     # bedrooms
     if 'bedrooms' in request.GET:
@@ -71,6 +71,7 @@ def search(request):
         'state_choices': state_choices,
         'bedroom_choices': bedroom_choices,
         'price_choices': price_choices,
-        'listings': queryset_list
+        'listings': queryset_list,
+        'values': request.GET
     }
     return render(request, 'listings/search.html', context)
